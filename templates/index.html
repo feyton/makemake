@@ -1,204 +1,376 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make Make</title>
-    <link rel="shortcut icon"
-        href="https://res.cloudinary.com/feyton/image/upload/v1688469921/WhatsApp_Image_2023-01-26_at_08.18.05_b0jcxm.jpg"
-        type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <style>
-        body {
-            font-family: 'Lexend', sans-serif;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">Make Make Construction</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Furniture</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Equipment</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-
-        <!-- Hero Section -->
-        <section class="hero-section" style="background-image: url('{% static 'img/bg.png' %}')">
-            <div class="hero-overlay"></div> <!-- Shadow overlay -->
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12 text-center mt-5 mb-4 font-weight-bold">
-                        <h1 class="display-4 ">Transforming Dreams into Reality</h1>
-                        <p class="lead bold font-weight-bold">We provide high-quality construction services in Rwanda.
-                        </p>
-                        <a href="#" class="btn btn-primary">Contact Us</a>
+{% load cloudinary %}
+{% block content %}
+<!-- ***** Main Banner Area Start ***** -->
+<div class="main-banner" id="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <div class="thumb">
+                        <div class="inner-content">
+                            <h4>We Are Make Make Ltd</h4>
+                            <span>Make Your Idea Happen, Get Your Permit</span>
+                            <div class="main-border-button">
+                                <a href="/shop">Check Our Shop!</a>
+                            </div>
+                        </div>
+                        <img src="https://res.cloudinary.com/feyton/image/upload/c_scale,h_680,w_790/v1688494123/table_vctylb.jpg"
+                            alt="">
                     </div>
                 </div>
             </div>
-        </section>
-
-
-
-        <!-- Services Section -->
-        <section id="services" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">Our Services</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Residential Construction</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="col-lg-6">
+                <div class="right-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="right-first-image">
+                                <div class="thumb">
+                                    <div class="inner-content">
+                                        <h4>Furniture</h4>
+                                        <span>Best Furniture on the market</span>
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="inner">
+                                            <h4>Furniture</h4>
+                                            <p>Buy high quality furniture that matches your style
+                                            </p>
+                                            <div class="main-border-button">
+                                                <a href="/shop#furniture">Discover More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img
+                                        src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_330,w_385/v1688494123/unique_jlwn12.jpg">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Commercial Construction</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="col-lg-6">
+                            <div class="right-first-image">
+                                <div class="thumb">
+                                    <div class="inner-content">
+                                        <h4>E-services</h4>
+                                        <span>From Irembo to RRA</span>
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="inner">
+                                            <h4>E-services</h4>
+                                            <p>Get your permit today through Make Make
+                                            </p>
+                                            <div class="main-border-button">
+                                                <a href="/services">Discover More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img
+                                        src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_330,w_385/v1688494122/salon_z3xzjn.jpg">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Renovation & Remodeling</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="col-lg-6">
+                            <div class="right-first-image">
+                                <div class="thumb">
+                                    <div class="inner-content">
+                                        <h4>Constructions</h4>
+                                        <span>Designs and Estimation</span>
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="inner">
+                                            <h4>Construction</h4>
+                                            <p>Unique Designs and Cost Estimation
+                                            </p>
+                                            <div class="main-border-button">
+                                                <a href="/shop">Discover More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img
+                                        src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_330,w_385/v1688494122/salon_z3xzjn.jpg">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-5">Testimonials</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod
-                                        gravida iaculis.</p>
-                                    <footer class="blockquote-footer">John Doe</footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod
-                                        gravida iaculis.</p>
-                                    <footer class="blockquote-footer">Jane Doe</footer>
-                                </blockquote>
+                        <div class="col-lg-6">
+                            <div class="right-first-image">
+                                <div class="thumb">
+                                    <div class="inner-content">
+                                        <h4>and More..</h4>
+                                        <span>We have more</span>
+                                    </div>
+                                    <div class="hover-content">
+                                        <div class="inner">
+                                            <h4>Accessories</h4>
+                                            <p>Check items that add value to your home
+                                            </p>
+                                            <div class="main-border-button">
+                                                <a href="#">Discover More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <img
+                                        src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_330,w_385/v1688494123/unique_jlwn12.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Us Section -->
-        <section id="contact" class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d214.17543613468646!2d30.057057528479348!3d-1.9290450506363612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwNTUnNDQuNSJTIDMwwrAwMycyNS43IkU!5e1!3m2!1sen!2srw!4v1688470437231!5m2!1sen!2srw"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="col-md-6">
-                        <!-- Contact Form -->
-                        <form>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer bg-dark text-white">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5 class="mb-4">Contact Us</h5>
-                    <p>Gisozi, Kigali, Rwanda</p>
-                    <p>Email: makemakerwanda@gmail.com</p>
-                    <p>Phone: +250727730860</p>
-                </div>
-                <div class="col-md-6">
-                    <h5 class="mb-4">Follow Us</h5>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a
-                                href="https://www.linkedin.com/company/makemakerwanda/?viewAsMember=true"
-                                target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCIe1ArKj2zRJDuy72ZUVSGA"
-                                target="_blank"><i class="fab fa-youtube"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4">
-            <p class="text-center">&copy; 2023 Make Make Rwanda. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+
+<!-- ***** Men Area Starts ***** -->
+<section class="section" id="men">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h2>Latest furnitures</h2>
+                    <span>Details to details is what makes Make Make different from the other vendors.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="men-item-carousel">
+                    <div class="owl-men-item owl-carousel">
+
+                        {% for product in products %}
+                        <div class="item">
+                            <div class="thumb">
+                                <div class="hover-content">
+                                    <ul>
+                                        <li><a href="{{product.get_absolute_url}}"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="{{product.get_absolute_url}}"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="{{product.get_absolute_url}}"><i
+                                                    class="fa fa-shopping-cart"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                {% cloudinary product.image width=370 height=390 crop="fill" %}
+                            </div>
+                            <div class="down-content">
+                                <h4>{{product.name}}</h4>
+                                <span>{{product.price}} Rwf</span>
+                                <ul class="stars">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
 
 
-    <!-- Include Bootstrap JS from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
-</html>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Men Area Ends ***** -->
+
+
+
+<!-- ***** Explore Area Starts ***** -->
+<section class="section" id="explore">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <h2>Explore Our Products and services</h2>
+                    <span>At Make Make our customers are our kings and we are here to serve you</span>
+
+                    <div class="main-border-button">
+                        <a href="products">Discover More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="leather">
+                                <h4>This Unique Table</h4>
+                                <span>Latest Furniture</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="first-image">
+                                <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="second-image">
+                                <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="types">
+                                <h4>Different Styles</h4>
+                                <span>Many products</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Explore Area Ends ***** -->
+
+<!-- ***** Social Area Starts ***** -->
+<section class="section" id="social">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Social Media</h2>
+                    <span>Check our new listings from our pages #instagram.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row images">
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Tables</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Chairs</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Designs</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Floor Plans</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Others</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>Uniques</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Social Area Ends ***** -->
+
+<!-- ***** Subscribe Area Starts ***** -->
+<div class="subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="section-heading">
+                    <h2>By Subscribing To Our Newsletter You Can The Latest News On Time</h2>
+                    <span>Share your email with us to get up to date products as we list them</span>
+                </div>
+                <form id="subscribe" action="" method="get">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-5">
+                            <fieldset>
+                                <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
+                                    placeholder="Your Email Address" required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-2">
+                            <fieldset>
+                                <button type="submit" id="form-submit" class="main-dark-button"><i
+                                        class="fa fa-paper-plane"></i></button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-6">
+                        <ul>
+                            <li>Store Location:<br><span>Gisozi, Kigali, Rwanda</span></li>
+                            <li>Phone:<br><span>+250727730860</span></li>
+                            <li>Office Location:<br><span>CHIC Building, Kigali</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>Work Hours:<br><span>09:00 - 20:00 Daily</span></li>
+                            <li>Email:<br><span>makemakerwanda@gmail.com</span></li>
+                            <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a
+                                        href="https://www.linkedin.com/company/makemakerwanda/?viewAsMember=true">Linkedin</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Subscribe Area Ends ***** -->
+{% endblock content %}

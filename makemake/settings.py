@@ -1,5 +1,8 @@
 from pathlib import Path
 from decouple import config
+import cloudinary
+import cloudinary.api
+import cloudinary.uploader
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY", default="django-insecure")
@@ -22,6 +25,7 @@ INSTALLED_APPS = [
     "django.forms",
     "user",
     "index",
+    "cloudinary",
     # AllAuth
     "allauth",
     "allauth.account",
@@ -90,7 +94,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+SITE_ID = 1
 STATIC_URL = "/static/"
 STATIC_ROOT = "assets"
 STATICFILES_DIRS = [BASE_DIR / "static"]
@@ -133,6 +137,12 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.makemake.rw",
     "http://*.makemake.rw",
 ]
+cloudinary.config(
+    cloud_name=config("cloud_name", default=""),
+    api_key=config("api_key", default=""),
+    api_secret=config("api_secret", default=""),
+    secure=True,
+)
 
 if MODE == "production":
     EMAIL_BACKEND = "anymail.backends.mailjet.EmailBackend"

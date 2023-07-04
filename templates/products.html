@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% load cloudinary %}
+
+
+
+<!-- ***** Main Banner Area Start ***** -->
+<div class="page-heading" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-content">
+                    <h2>Check Our Products</h2>
+                    <span>Make Your Idea Happen</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+
+
+<!-- ***** Products Area Starts ***** -->
+<section class="section" id="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Our Latest Products</h2>
+                    <span>Check out all of our products.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            {% for product in products %}
+            <div class="col-lg-4">
+                <div class="item">
+                    <div class="thumb">
+                        <div class="hover-content">
+                            <ul>
+                                <li><a href="{{product.get_absolute_url}}"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="{{product.get_absolute_url}}"><i class="fa fa-star"></i></a></li>
+                                <li><a href="{{product.get_absolute_url}}"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        {% cloudinary product.image width=370 height=390 crop="fill" %}
+                    </div>
+                    <div class="down-content">
+                        <h4>{{product.name}}</h4>
+                        <span>{{product.price}}</span>
+                        <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+        </div>
+    </div>
+</section>
+<!-- ***** Products Area Ends ***** -->
+{% endblock content %}
