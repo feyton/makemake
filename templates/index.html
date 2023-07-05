@@ -2,6 +2,7 @@
 {% load static %}
 {% load cloudinary %}
 {% block content %}
+{% load humanize %}
 <!-- ***** Main Banner Area Start ***** -->
 <div class="main-banner" id="top">
     <div class="container-fluid">
@@ -10,7 +11,7 @@
                 <div class="left-content">
                     <div class="thumb">
                         <div class="inner-content">
-                            <h4>We Are Make Make Ltd</h4>
+                            <h4 class="text-primary">We Are Make Make Ltd</h4>
                             <span>Make Your Idea Happen, Get Your Permit</span>
                             <div class="main-border-button">
                                 <a href="/shop">Check Our Shop!</a>
@@ -154,7 +155,7 @@
                             </div>
                             <div class="down-content">
                                 <h4>{{product.name}}</h4>
-                                <span>{{product.price}} Rwf</span>
+                                <span>{{product.price | intcomma}} Rwf</span>
                                 <ul class="stars">
                                     <li><i class="fa fa-star"></i></li>
                                     <li><i class="fa fa-star"></i></li>
@@ -185,10 +186,21 @@
             <div class="col-lg-6">
                 <div class="left-content">
                     <h2>Explore Our Products and services</h2>
-                    <span>At Make Make our customers are our kings and we are here to serve you</span>
+                    <h4 class="font-weight-bold mt-1">Construction</h4>
+                    <p>At Make Make Construction, we specialize in providing high-quality construction services in
+                        Rwanda. We ensure attention to detail, adherence to timelines, and a seamless construction
+                        process that meets your specific requirements.</p>
 
+                    <h4 class="font-weight-bold mt-1">E-Services</h4>
+                    <p>Our e-services division offers a range of digital solutions to enhance your construction
+                        experience. We provide innovative technologies and software applications that streamline project
+                        management, facilitate communication, and improve collaboration. </p>
+
+                    <h4 class="font-weight-bold mt-1">Furniture Sales</h4>
+                    <p>In addition to our construction services, we also offer a selection of high-quality furniture for
+                        residential and commercial spaces. </p>
                     <div class="main-border-button">
-                        <a href="products">Discover More</a>
+                        <a href="/about#services">Discover More</a>
                     </div>
                 </div>
             </div>
@@ -197,8 +209,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="leather">
-                                <h4>This Unique Table</h4>
-                                <span>Latest Furniture</span>
+                                <h4>Furnitures</h4>
+                                <span>Latest market trends, designed in house and delivered to your doorstep</span>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -209,14 +221,14 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="second-image">
-                                <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
+                                <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688542126/emmanuel-obeng-construction-services-Hr6slIZxvLn_yn3ciu.jpg"
                                     alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="types">
-                                <h4>Different Styles</h4>
-                                <span>Many products</span>
+                                <h4>And much more</h4>
+                                <span>We hold your hand, all the way. From getting your permit to construction</span>
                             </div>
                         </div>
                     </div>
@@ -241,78 +253,22 @@
     </div>
     <div class="container">
         <div class="row images">
+
+            {% for product in products %}
             <div class="col-2">
                 <div class="thumb">
                     <div class="icon">
-                        <a href="http://instagram.com">
-                            <h6>Tables</h6>
+                        <a href="{{product.get_absolute_url}}">
+                            <h6>{{product.name}}</h6>
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
-                        alt="">
+                    {% cloudinary product.image width=263 height=263 crop="scale" %}
                 </div>
             </div>
-            <div class="col-2">
-                <div class="thumb">
-                    <div class="icon">
-                        <a href="http://instagram.com">
-                            <h6>Chairs</h6>
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
-                        alt="">
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="thumb">
-                    <div class="icon">
-                        <a href="http://instagram.com">
-                            <h6>Designs</h6>
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
-                        alt="">
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="thumb">
-                    <div class="icon">
-                        <a href="http://instagram.com">
-                            <h6>Floor Plans</h6>
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
-                        alt="">
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="thumb">
-                    <div class="icon">
-                        <a href="http://instagram.com">
-                            <h6>Others</h6>
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
-                        alt="">
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="thumb">
-                    <div class="icon">
-                        <a href="http://instagram.com">
-                            <h6>Uniques</h6>
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                    <img src="https://res.cloudinary.com/feyton/image/upload/c_fill,h_263,w_263/v1688494122/designs_ql80wh.jpg"
-                        alt="">
-                </div>
-            </div>
+            {% endfor %}
+
+
         </div>
     </div>
 </section>
@@ -355,7 +311,7 @@
                         <ul>
                             <li>Store Location:<br><span>Gisozi, Kigali, Rwanda</span></li>
                             <li>Phone:<br><span>+250727730860</span></li>
-                            <li>Office Location:<br><span>CHIC Building, Kigali</span></li>
+                            <li>Office Location:<br><span>Gisozi, Kigali, Rwanda</span></li>
                         </ul>
                     </div>
                     <div class="col-6">
